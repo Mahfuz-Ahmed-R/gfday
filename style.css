@@ -21,6 +21,10 @@ html, body{
   overflow-x:hidden;
 }
 
+body{
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* spinning spiral background, built with layered repeating radial gradients */
 .spiral-bg{
   position:fixed;
@@ -125,6 +129,27 @@ h1.title{
   justify-content:center;
   z-index: 10;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.mute-toggle.needs-play{
+  background: rgba(217, 79, 92, 0.92);
+  color: var(--white);
+  border-color: rgba(217, 79, 92, 0.92);
+}
+
+.music-start-prompt{
+  position: fixed;
+  top: 18px;
+  right: 72px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(74, 46, 57, 0.9);
+  color: var(--white);
+  padding: 12px 16px;
+  font: 600 13px/1 'Poppins', sans-serif;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+  z-index: 11;
+  cursor: pointer;
 }
 
 /* ---------- Page 1 : cover ---------- */
@@ -321,4 +346,138 @@ h1.title{
   font-size: 20px;
   writing-mode: vertical-lr;
   display:inline-block;
+}
+
+@media (max-width: 640px){
+  .page{
+    padding: 84px 16px 88px;
+  }
+
+  .card{
+    padding: 28px 16px 32px;
+    border-radius: 22px;
+  }
+
+  h1.title{
+    font-size: clamp(28px, 9vw, 42px);
+  }
+
+  .next-link,
+  .restart-link{
+    margin-top: 28px;
+    font-size: 16px;
+  }
+
+  .mute-toggle{
+    top: calc(14px + env(safe-area-inset-top, 0px));
+    right: 14px;
+  }
+
+  .music-start-prompt{
+    top: calc(14px + env(safe-area-inset-top, 0px));
+    right: 64px;
+    max-width: calc(100vw - 132px);
+    padding: 11px 14px;
+    font-size: 12px;
+  }
+
+  .bear-scene{
+    margin: 18px 0;
+  }
+
+  .bouquet{
+    font-size: 48px;
+  }
+
+  .bear{
+    font-size: 88px;
+  }
+
+  .gift-tag{
+    font-size: 22px;
+  }
+
+  .tagline{
+    font-size: 32px;
+  }
+
+  .subtag{
+    letter-spacing: 2px;
+    font-size: 12px;
+  }
+
+  .letter-wrap{
+    gap: 20px;
+  }
+
+  .letter-photo{
+    width: min(72vw, 220px);
+    min-width: 0;
+  }
+
+  .letter-text p{
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .vinyl-scene{
+    width: min(100%, 330px);
+    margin-top: 20px;
+  }
+
+  .polaroid{
+    padding: 6px 6px 18px;
+  }
+
+  .flip-card{
+    width: min(100%, 220px);
+    height: 290px;
+  }
+
+  .flip-inner{
+    font-size: 34px;
+  }
+
+  .flip-inner .more{
+    font-size: 28px;
+  }
+
+  .coupon{
+    padding: 24px 18px;
+    max-width: 100%;
+  }
+
+  .coupon .hug{
+    font-size: 36px;
+  }
+
+  .barcode{
+    writing-mode: horizontal-tb;
+    display:block;
+    margin-top: 18px;
+    font-size: 15px;
+    letter-spacing: 3px;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 400px){
+  .page{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .card{
+    padding: 24px 14px 28px;
+  }
+
+  .music-start-prompt{
+    right: 60px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .vinyl-scene{
+    width: min(100%, 290px);
+  }
 }
